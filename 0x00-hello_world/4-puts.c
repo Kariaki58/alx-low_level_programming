@@ -1,7 +1,7 @@
 #include <stdio.h>
 /**
- * Main -Entry
- * return - leaves the main functions aka end of programe
+ * Main - Entry
+ *Return: Always 0
 */
 int main(void)
 {  
