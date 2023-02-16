@@ -1,11 +1,9 @@
 #include <stdio.h>
 
-/*
+/**
  * main - Entry point
  *
- * Description: 'ths is added'
- * 
- * return - success 0
+ * Return: 0
 */
 
 int main(void)
