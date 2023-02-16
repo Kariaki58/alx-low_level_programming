@@ -3,7 +3,8 @@
 /**
  *main - Entry
  *
- * Return - success (0)
+ * code by bwave
+ * Return: 0
 */
 int main(void)
 {
