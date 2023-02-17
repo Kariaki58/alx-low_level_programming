@@ -6,26 +6,29 @@
  */
 int main(void)
 {
-	int digit1, digit2;
+	int i, j;
 
-	for (digit1 = 0; digit1 < 9; digit1++)
+	for (i = 0; i < 10; i++)
 	{
-		for (digit2 = 0; digit2 < 10; digit2++)
+		for (j = 0; j < 10; j++)
 		{
-			if (digit1 != digit2 && digit2 != 0)
+			if (i < j)
 			{
-				putchar((digit1 % 10) + '0');
-				putchar((digit2 % 10) + '0');
+				putchar((i % 10) + '0');
+				putchar((j % 10) + '0');
 			}
-			if (digit1 == 9 && digit2 == 9)
+			if (i == 9 && j == 9)
 				continue;
-			if (digit1 != digit2 && digit2 != 9)
+			if (i < j)
 			{
+				if (i == 8 && i == 9)
+				{
+					break;
+				}
 				putchar(',');
 				putchar(' ');
 			}
 		}
 	}
-	putchar('\n');
 	return (0);
 }
