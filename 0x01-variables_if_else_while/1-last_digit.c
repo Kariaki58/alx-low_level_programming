@@ -11,11 +11,12 @@
 /* betty style doc for function main goes there */
 int main(void)
 {
-	int n, l = n % 10;
+	int n, l;
 
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
 	/* your code goes there */
+	l = n % 10;
 	if (l == 0)
 	printf("Last digit of %d is %d and is 0\n", n, l);
 	if (l >  5)
