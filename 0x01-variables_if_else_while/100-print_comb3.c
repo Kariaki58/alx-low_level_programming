@@ -21,7 +21,7 @@ int main(void)
 				continue;
 			if (i < j)
 			{
-				if (i == 8 && i == 9)
+				if (i == 8 && j == 9)
 				{
 					break;
 				}
