@@ -16,6 +16,8 @@ int main(void)
 			{
 				for (j2 = 0; j2 < 10; j2++)
 				{
+				if (i1 == i2 && j1 == j2)
+					continue;
 				putchar(i1 + '0');
 				putchar(i2 + '0');
 				putchar(' ');
