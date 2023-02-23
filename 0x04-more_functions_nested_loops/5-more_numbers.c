@@ -1,18 +1,21 @@
 #include "main.h"
 /**
- * more_numbers - returns a number from 1 to 14
+ * more_numbers - print 10 lines the number from 0 to 14
  */
 void more_numbers(void)
 {
-	int i, j;
+	int x, y;
 
-	for (i = 0; i < 10; i++)
+	for (x = 0; x < 10; x++)
 	{
-		for (j = 0; j <= 14; j++)
+		for (y = 0; y < 15; y++)
 		{
-			_putchar((j / 10) + '0');
+			if (y > 9)
+			{
+				_putchar((y / 10) + '0');
+			}
+			_putchar((y % 10) + '0');
 		}
-		_putchar((j % 10) + '0');
+		_putchar('\n');
 	}
-	_putchar('\n');
 }
