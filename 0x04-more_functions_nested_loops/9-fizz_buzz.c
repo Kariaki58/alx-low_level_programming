@@ -1,5 +1,4 @@
 #include <stdio.h>
-
 /**
  * main - check the code
  *
@@ -16,22 +15,24 @@ int main(void)
 		{
 			if ((j % 3 == 0) && (j % 5 == 0))
 			{
-				printf("FizzBuzz ");
+				printf("FizzBuzz");
 				continue;
 			}
 			if (j % 3 == 0)
 			{
-				printf("Fizz ");
+				printf("Fizz");
 				continue;
 			}
 			if (j % 5 == 0)
 			{
-				printf("Buzz ");
+				printf("Buzz");
 				continue;
 			}
-			printf("%d ", j);
+			printf("%d", j);
+			if (j != 100)
+				printf(" ");
 		}
-		printf("\n");
 	}
+	printf("\n");
 	return (0);
 }
