@@ -1,3 +1,4 @@
+#include "main.h"
 /**
  * more_numbers - returns a number from 1 to 14
  */
