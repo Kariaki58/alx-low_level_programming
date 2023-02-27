@@ -2,7 +2,7 @@
 #include <string.h>
 /**
  * rev_string - the function that reverse the string s
- * @s: the input to be revered.
+ * @arr: the input to be revered.
  */
 void rev_string(char arr[])
 {
