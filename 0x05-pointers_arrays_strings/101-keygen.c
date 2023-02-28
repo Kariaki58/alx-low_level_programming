@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include <unistd.h>
 
 /**
  * main - print random password
@@ -9,18 +8,41 @@
  */
 int main()
 {
-	int lb, ub;
-	lb = 20, ub = 100;
+	char password[84];
+	int index = 0, sum = 0, diff_half1, diff_half2;
+
 	srand(time(0));
-	for (int i = 0; i < 20; i++)
+
+	while (sum < 2772)
 	{
-		int rand_num; = (rand() % ub - lb + 1) + lb;
-		if (rand_num > 32 && rand_num < 127)
+		password[index] = 33 + rand() % 94;
+		sum += password[index++];
+	}
+	password[index] = '\0';
+	if (sum != 2772)
+	{
+		diff_half1 = (sum - 2772) / 2;
+		diff_half2 = (sum - 2772) / 2;
+		if ((sum - 2772) % 2 != 0)
+			diff_half1++;
+		for (index = 0; password[index]; index++)
 		{
-			printf("%c", rand_num);
+			if (password[index] >= (33 + diff_half1))
+			{
+				password[index] -= diff_half1;
+				break;
+			}
+		}
+		for (index = 0; password[index]; index++)
+		{
+			if (password[index] >= (33 + diff_half2))
+			{
+				password[index] -= diff_half2;
+				break;
+			}
 		}
 	}
-	printf("\n");
+	printf("%s\n", password);
 
-	return 0;
+	return (0);
 }
