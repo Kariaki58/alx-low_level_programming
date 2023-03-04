@@ -1,25 +1,55 @@
 #include "main.h"
+
+/**
+ * get_length - Gets the length of a string.
+ * @str: The string.
+ *
+ * Return: The length of @str.
+ */
+int get_length(char *str)
+{
+	int length = 0;
+
+	while (str[length])
+		length++;
+	return (length);
+}
+
+/**
+ * reverse_string - Reverses a string.
+ * @str: The string.
+ *
+ * Return: A pointer to the reversed string.
+ */
+void reverse_string(char *str)
+{
+	int i, j;
+	char temp;
+	int length = get_length(str);
+
+	for (i = 0, j = length - 1; i < j; i++, j--)
+	{
+		temp = str[i];
+		str[i] = str[j];
+		str[j] = temp;
+	}
+}
+
 /**
  * infinite_add - Adds two numbers.
- *
  * @n1: The first number.
  * @n2: The second number.
- * @r: The buffer where the result will be stored.
- * @size_r: The size of the buffer.
+ * @r: The buffer that the function will use to store the result.
+ * @size_r: The buffer size.
  *
- * Return: If the result can be stored in r - a pointer to the result.
- *         If the result can't be stored in r - 0.
+ * Return: A pointer to the result.
  */
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
 	int i, j, k, carry, sum, len1, len2;
 
-	len1 = 0;
-	while (n1[len1])
-		len1++;
-	len2 = 0;
-	while (n2[len2])
-		len2++;
+	len1 = get_length(n1);
+	len2 = get_length(n2);
 	if (len1 + 2 > size_r || len2 + 2 > size_r)
 		return (0);
 	carry = 0;
@@ -35,8 +65,8 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 			sum += n2[j] - '0';
 		carry = sum / 10;
 		r[k] = sum % 10 + '0';
-		j--;
 		i--;
+		j--;
 		k++;
 	}
 	if (carry)
@@ -47,12 +77,6 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		k++;
 	}
 	r[k] = '\0';
-	for (i = 0, j = k - 1; i < j; i++, j--)
-	{
-		char tmp = r[i];
-
-		r[i] = r[j];
-		r[j] = tmp;
-	}
+	reverse_string(r);
 	return (r);
 }
