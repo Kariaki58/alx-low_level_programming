@@ -1,0 +1,11 @@
+#ifndef __MIAN__
+#define __MIAN__
+
+char *_memset(char *s, char b, unsigned int n);
+
+
+
+
+fdakjf
+
+#endif
