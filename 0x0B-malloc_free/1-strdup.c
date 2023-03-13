@@ -14,9 +14,9 @@ char *_strdup(char *str)
 	if (str == NULL)
 		return (NULL);
 
-	s = malloc(strlen(str));
+	s = malloc(strlen(str) + 1);
 	if (s == NULL)
 		return (NULL);
-	memcpy(s, str, strlen(str));
+	memcpy(s, str, strlen(str) + 1);
 	return (s);
 }
