@@ -15,29 +15,20 @@ char *str_concat(char *s1, char *s2)
 
 	if (s2 == NULL)
 	{
-		int len = strlen(s1);
-
-		new_string = malloc(len);
-		strcat(new_string, s1);
-		return (new_string);
+		s2 = "";
 	}
 	if (s1 == NULL)
-	{
-		int len = strlen(s2);
-
-		new_string = malloc(len);
-		strcat(new_string, s2);
-		return (new_string);
-	}
+		s1 = "";
 	if (s1 == NULL && s2 == NULL)
 	{
-		return ("");
+		s1 = "";
+		s2 = "";
 	}
 	size = strlen(s1) + strlen(s2);
-
 	new_string = malloc(size + 1);
 	if (new_string == NULL)
 	{
+		free(new_string);
 		return (NULL);
 	}
 	strcat(new_string, s1);
