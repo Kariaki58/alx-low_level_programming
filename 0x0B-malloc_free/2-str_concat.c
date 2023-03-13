@@ -11,12 +11,30 @@
 char *str_concat(char *s1, char *s2)
 {
 	char *new_string;
-	int size = strlen(s1) + strlen(s2);
+	int size;
 
-	if (s1 == NULL || s2 == NULL)
+	if (s2 == NULL)
+	{
+		int len = strlen(s1);
+
+		new_string = malloc(len);
+		strcat(new_string, s1);
+		return (new_string);
+	}
+	if (s1 == NULL)
+	{
+		int len = strlen(s2);
+
+		new_string = malloc(len);
+		strcat(new_string, s2);
+		return (new_string);
+	}
+	if (s1 == NULL && s2 == NULL)
 	{
 		return ("");
 	}
+	size = strlen(s1) + strlen(s2);
+
 	new_string = malloc(size + 1);
 	if (new_string == NULL)
 	{
