@@ -1,8 +1,15 @@
+#include "3-calc.h"
 #include <stdlib.h>
 #include <stdio.h>
-#include <string.h>
 
-int main()
+/**
+ * main - ...
+ * @argc: ...
+ * @argv: ...
+ *
+ * Return: ...
+ */
+int main(int argc, char *argv[])
 {
 	int (*oprt)(int, int);
 
