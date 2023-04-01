@@ -6,18 +6,18 @@
  */
 int main(void)
 {
-	unsigned long long int fib_1, fib_2, fib_cal, i;
+	unsigned long int fib_1, fib_2, fib_cal, i;
 
 	fib_1 = 1;
 	fib_2 = 2;
-	printf("%lld, ", fib_1);
-	printf("%lld, ", fib_2);
-	for (i = 0; i < 98 - 2; i++)
+	printf("%ld, ", fib_1);
+	printf("%ld, ", fib_2);
+	for (i = 0; i <= 98; i++)
 	{
 		fib_cal = fib_1 + fib_2;
 		fib_1 = fib_2;
 		fib_2 = fib_cal;
-		printf("%lld", fib_cal);
+		printf("%ld", fib_cal);
 		if (i < 98 - 3)
 		{
 			printf(",");
