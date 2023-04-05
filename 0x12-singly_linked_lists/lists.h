@@ -1,0 +1,24 @@
+#ifndef __MAIN__
+#define __MAIN__
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+/**
+ * struct list_s - linked list
+ * @str: string input
+ * @len: strlen
+ * @next: next pointer to node
+ * Description: singly linked list
+ */
+
+typedef struct list_s
+{
+	char *str;
+	int len;
+	struct list_s *next;
+} list_t;
+
+size_t print_list(const list_t *h);
+#endif
