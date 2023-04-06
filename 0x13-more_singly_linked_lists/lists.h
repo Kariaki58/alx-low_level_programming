@@ -5,14 +5,16 @@
 #include <stdio.h>
 
 /**
- * list_int - singly linked list
- * @n: int data type
- * @next: go to the next node
+ * struct list_s - linked list
+ * @n: int input
+ * @next: next pointer to node
+ * Description: singly linked list
  */
-typedef struct list_t
+
+typedef struct list_s
 {
 	int n;
-	struct list_t *next;
+	struct list_s *next;
 } listint_t;
 size_t print_listint(const listint_t *h);
 
