@@ -25,14 +25,12 @@ int main(int arg_count, char *arg_list[])
 	}
 	_file2 = open(arg_list[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	while ((bytes = read(_file1, buffer, SIZE)) > 0)
-	{
 		if (_file2 < 0 || write(_file2, buffer, bytes) != bytes)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", arg_list[2]);
 			close(_file1);
 			exit(99);
 		}
-	}
 	if (bytes < 0)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", arg_list[1]);
@@ -45,8 +43,10 @@ int main(int arg_count, char *arg_list[])
 		if (close_1 < 0)
 			dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", _file1);
 		if (close_2 < 0)
+		{
 			dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", _file2);
 			exit(100);
+		}
 	}
 	return (0);
 }
