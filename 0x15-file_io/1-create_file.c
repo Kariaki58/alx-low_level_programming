@@ -14,20 +14,15 @@ int create_file(const char *filename, char *text_content)
 
 	if (filename == NULL)
 		return (-1);
-	if (text_content == NULL)
-	{
-		_file = open(filename, O_CREAT | O_WRONLY, 0600);
-	}
-	_file = open(filename, O_CREAT | O_WRONLY, 0600);
+	_file = open(filename, O_CREAT | O_RDWR | O_TRUNC, 0600);
 	if (_file == -1)
 		return (-1);
-	len = strlen(text_content) + 1;
-	text_content[len] = '\0';
-	write_file = write(_file, text_content, len);
-	if (write_file == -1)
+	if (text_content)
 	{
-		close(_file);
-		return (-1);
+		len = strlen(text_content);
+		write_file = write(_file, text_content, len);
+		if (write_file != len)
+			return (-1);
 	}
 	close(_file);
 	return (1);
