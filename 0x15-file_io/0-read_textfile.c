@@ -9,35 +9,36 @@
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	int _file;
-	char *buffer;
-	ssize_t POSIX;
+	int _file, file_read;
+	ssize_t file_content;
+	char *buf;
 
-	_file = open(filename, O_RDONLY);
-	buffer = malloc(sizeof(char) * (letters - 2));
-	POSIX = read(_file, buffer, letters);
 	if (filename == NULL)
 		return (0);
+	_file = open(filename, O_RDONLY);
 	if (_file == -1)
 	{
-		free(buffer);
 		return (0);
 	}
-	if (POSIX == -1)
+	buf = malloc(sizeof(char) * letters);
+	if (buf == NULL)
 	{
-		free(buffer);
-		close(_file);
 		return (0);
 	}
-	POSIX = write(STDOUT_FILENO, buffer, POSIX);
-	if (POSIX == -1)
+	file_read = read(_file, buf, letters);
+	if (file_read == -1)
 	{
-		free(buffer);
-		close(_file);
+		free(buf);
 		return (0);
 	}
-	printf("%s", buffer);
-	free(buffer);
+	buf[file_read] = '\0';
 	close(_file);
-	return (POSIX);
+	file_content = write(STDOUT_FILENO, buf, file_read);
+	if (file_content == -1)
+	{
+		free(buf);
+		return (0);
+	}
+	free(buf);
+	return (file_content);
 }
