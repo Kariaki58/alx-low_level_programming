@@ -1,76 +1,54 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <fcntl.h>
-#include <unistd.h>
+#include "main.h"
 #define SIZE 1024
-
 /**
- * read_file - read file
- * @buffer: buffer
- * @file1: file name
- */
-void read_file(char *buffer, char *file1)
-{
-	int reader, _file;
-
-	_file = open(file1, O_RDWR);
-	if (_file == -1)
-	{
-		printf("Error: Can't read from file %s\n", file1);
-		close(_file);
-		exit(98);
-	}
-	reader = read(_file, buffer, SIZE);
-	if (reader == -1)
-	{
-		printf("Error: can't read from file %s\n", file1);
-		exit(98);
-	}
-	buffer[reader] = '\0';
-	if (close(_file) == -1)
-	{
-		printf("Error: Can't close fd %d\n", _file);
-		exit(100);
-	}
-}
-
-/**
- * main - program entry
- * @argc: argc
- * @argv: argv
- * Return: zero
+ * main - main function
+ * @arg_count: arg count
+ * @arg_list: arg_list
+ * Return: return
  */
 
-int main(int argc, char *argv[])
+int main(int arg_count, char *arg_list[])
 {
-	char buffer[SIZE], *file1, *file2;
-	int writing, _file2;
+	int _file1, _file2, bytes, close_1, close_2;
+	char buffer[SIZE];
 
-	if (argc != 3)
+	if (arg_count != 3)
 	{
-		printf("Usage: cp file_from file_to\n");
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
-	file1 = argv[1];
-	file2 = argv[2];
-	read_file(buffer, file1);
-	_file2 = open(file2, O_CREAT | O_RDWR | O_TRUNC, 664);
-	if (_file2 == -1)
+	_file1 = open(arg_list[1], O_RDONLY);
+	if (_file1 < 0)
 	{
-		printf("Error: Can't write to %s\n", file2);
-		exit(99);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", arg_list[1]);
+		exit(98);
 	}
-	writing = write(_file2, buffer, strlen(buffer));
-	if (writing == -1)
+	_file2 = open(arg_list[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
+	while ((bytes = read(_file1, buffer, SIZE)) > 0)
 	{
-		printf("Error: Can't write to %s\n", file2);
-		exit(99);
+		if (_file2 < 0 || write(_file2, buffer, bytes) != bytes)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", arg_list[2]);
+			close(_file1);
+			exit(99);
+		}
 	}
-	if (close(_file2) == -1)
+	if (bytes < 0)
 	{
-		printf("Error: can't close fd %d\n", _file2);
-		exit(100);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", arg_list[1]);
+		exit(98);
+	}
+	close_1 = close(_file1);
+	close_2 = close(_file2);
+	if (close_1 < 0 || close_2 < 0)
+	{
+		if (close_1 < 0)
+			dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", _file1);
+		if (close_2 < 0)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", _file2);
+			exit(100);
+		}
 	}
 	return (0);
 }
