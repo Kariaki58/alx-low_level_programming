@@ -45,10 +45,8 @@ int main(int arg_count, char *arg_list[])
 		if (close_1 < 0)
 			dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", _file1);
 		if (close_2 < 0)
-		{
 			dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", _file2);
 			exit(100);
-		}
 	}
 	return (0);
 }
