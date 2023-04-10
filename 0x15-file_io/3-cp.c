@@ -18,7 +18,7 @@ int main(int arg_count, char *arg_list[])
 		exit(97);
 	}
 	_file1 = open(arg_list[1], O_RDONLY);
-	if (_file1 < 0)
+	if (_file1 == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", arg_list[1]);
 		exit(98);
@@ -31,7 +31,7 @@ int main(int arg_count, char *arg_list[])
 			close(_file1);
 			exit(99);
 		}
-	if (bytes < 0)
+	if (bytes == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", arg_list[1]);
 		exit(98);
