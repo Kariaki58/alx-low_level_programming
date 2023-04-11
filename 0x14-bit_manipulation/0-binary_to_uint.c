@@ -9,21 +9,16 @@
 
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int Denum = 0;
-	unsigned int bit = 1;
-	int i;
+	unsigned int num = 0;
+	unsigned int i;
 
 	if (b == NULL)
 		return (0);
-	if (!b)
-		return (0);
-	for (i = strlen(b) - 1; i >= 0; i--)
+	for (i = 0; i < strlen(b); i++)
 	{
-		if (b[i] == '1')
-			Denum += bit;
-		else if (b[i] != '0')
+		if (b[i] < '0' || b[i] > '1')
 			return (0);
-		bit *= 2;
+		num = (num << 1) + (b[i] - '0');
 	}
-	return (Denum);
+	return (num);
 }
