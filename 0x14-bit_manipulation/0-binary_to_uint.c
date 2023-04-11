@@ -9,20 +9,16 @@
 
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int num;
-	size_t str_len, i;
-	int char_num;
+	int i;
+	unsigned int converter = 0;
 
-	num = 0;
-	str_len = strlen(b);
-	if (!b)
+	if (b == NULL)
 		return (0);
-	for (i = 0; i < str_len; i++)
+	for (i = 0; b[i]; i++)
 	{
 		if (b[i] < '0' || b[i] > '1')
 			return (0);
-		char_num = b[i] - '0';
-		num = 2 * num + char_num;
+		converter = 2 * converter + (b[i] - '0');
 	}
-	return (num);
+	return (converter);
 }
