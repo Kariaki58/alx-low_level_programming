@@ -4,7 +4,7 @@
  * main - Entry point
  * Return: return 0
  */
-int main()
+int main(void)
 {
 	char i;
 
