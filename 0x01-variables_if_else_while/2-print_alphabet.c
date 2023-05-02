@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+/**
+ * main - Entry point
+ * Return: return 0
+ */
+int main()
+{
+	char i;
+
+	for (i = 'a'; i <= 'z'; i++)
+	{
+		putchar(i);
+	}
+	putchar('\n');
+	return (0);
+}
