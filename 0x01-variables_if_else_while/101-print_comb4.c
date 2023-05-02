@@ -7,6 +7,7 @@
 int main(void)
 {
 	int i, j, k, status = 0;
+
 	for (i = 0; i < 10; i++)
 	{
 		if (status)
