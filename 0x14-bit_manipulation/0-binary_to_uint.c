@@ -13,9 +13,8 @@ unsigned int binary_to_uint(const char *b)
 	size_t str;
 	char j;
 
-	if (!b)
+	if (b == NULL)
 	{
-		printf("here\n");
 		return (0);
 	}
 	str = strlen(b);
