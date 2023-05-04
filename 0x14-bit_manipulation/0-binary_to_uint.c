@@ -21,13 +21,13 @@ unsigned int binary_to_uint(const char *b)
 	deci = 0;
 	for (i = 0; i < str; i++)
 	{
-		for (j = 'a'; j < 'z'; j++)
+		for (j = 'a'; j <= 'z'; j++)
 		{
 			if (b[i] == j)
 				return (0);
 		}
 	}
-	for (i = 0; i < str + 1; i++)
+	for (i = 0; i <= str; i++)
 	{
 		num = b[i] - '0';
 		deci += num << (str - i - 1);
