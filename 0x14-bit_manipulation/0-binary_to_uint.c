@@ -8,29 +8,18 @@
 
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int deci, num;
-	size_t i;
-	size_t str;
-	char j;
+	unsigned int deci = 0;
+	int i;
 
 	if (b == NULL)
 	{
 		return (0);
 	}
-	str = strlen(b);
-	deci = 0;
-	for (i = 0; i < str; i++)
+	for (i = 0; b[i]; i++)
 	{
-		for (j = 'a'; j <= 'z'; j++)
-		{
-			if (b[i] == j)
-				return (0);
-		}
-	}
-	for (i = 0; i <= str; i++)
-	{
-		num = b[i] - '0';
-		deci += num << (str - i - 1);
+		if (b[i] < '0' || b[i] > '1')
+			return (0);
+		deci = (2 * deci) + (b[i] - '0');
 	}
 	return (deci);
 }
