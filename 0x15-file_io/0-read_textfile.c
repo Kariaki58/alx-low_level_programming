@@ -24,6 +24,8 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	mem = malloc(letters * sizeof(char));
 	while ((read_file = read(fd, mem, letters)) > 0)
 	{
+		if (read_file < 0)
+			return (0);
 		write(STDOUT_FILENO, mem, read_file);
 	}
 	return (read_file);
