@@ -5,6 +5,12 @@
 #include <fcntl.h>
 #include "main.h"
 
+/**
+ * append_text_to_file - append text to a file
+ * @filename: file name
+ * @text_content: text content
+ * Return: 1 on success -1 on failure
+ */
 int append_text_to_file(const char *filename, char *text_content)
 {
 	int fd;
