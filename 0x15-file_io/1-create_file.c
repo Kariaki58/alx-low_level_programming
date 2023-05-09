@@ -22,6 +22,8 @@ int create_file(const char *filename, char *text_content)
 	buffer = text_content;
 	if (fd == -1)
 		return (-1);
+	if (!text_content)
+		return (-1);	
 	write_file = write(fd, buffer, strlen(buffer));
 	if (write_file < 0)
 		return (-1);
