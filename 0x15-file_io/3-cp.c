@@ -60,8 +60,7 @@ int main(int ac, char *av[])
 	r = read(fd_r, buffer, 1024);
 	fd_w = open(av[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 
-	do
-	{
+	do {
 		if (fd_r == -1 || r == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
