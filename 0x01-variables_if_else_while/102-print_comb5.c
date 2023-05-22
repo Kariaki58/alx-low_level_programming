@@ -13,7 +13,6 @@ int main(void)
 	{
 		for (j = i; j < 100; j++)
 		{
-			
 			if ((i % 10) == (j % 10))
 				continue;
 			putchar((i / 10) + '0');
@@ -21,7 +20,7 @@ int main(void)
 			putchar(' ');
 			putchar((j / 10) + '0');
 			putchar((j % 10) + '0');
-			if (i == 98)
+			if (i == 98 || b == 99)
 			{
 				status = 1;
 				break;
