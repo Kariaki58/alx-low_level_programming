@@ -6,9 +6,8 @@
  */
 int main(void)
 {
-	unsigned long int i, a = 1, b = 2, c, sum = 0;
+	unsigned long int i, a = 1, b = 2, c, sum = 2;
 
-	sum = a + b;
 	for (i = 0; i < 31; i++)
 	{
 		c = a + b;
