@@ -9,13 +9,13 @@ int main(void)
 	unsigned long int i, a = 1, b = 2, c;
 
 	printf("%ld, %ld, ", a, b);
-	for (i = 0; i <= 50; i++)
+	for (i = 0; i < 48; i++)
 	{
 		c = a + b;
 		a = b;
 		b = c;
 		printf("%ld", c);
-		if (i < 50)
+		if (i < 47)
 		{
 			putchar(',');
 			putchar(' ');
