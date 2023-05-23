@@ -6,7 +6,7 @@
  */
 int main(void)
 {
-	int i, a = 1, b = 2, c;
+	unsigned int i, a = 1, b = 2, c;
 
 	printf("%d, %d, ", a, b);
 	for (i = 0; i <= 50; i++)
