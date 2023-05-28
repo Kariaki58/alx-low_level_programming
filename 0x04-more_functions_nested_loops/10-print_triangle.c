@@ -1,5 +1,9 @@
 #include "main.h"
 
+/**
+ * print_triangle - print triangle
+ * @size: input size
+ */
 void print_triangle(int size)
 {
 	int i, j, k;
