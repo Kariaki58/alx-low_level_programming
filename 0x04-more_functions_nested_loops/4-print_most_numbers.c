@@ -1,5 +1,9 @@
 #include "main.h"
 
+/**
+ * print_most_numbers - print numbers from 0 - 10 without printing
+ * 2 and 4
+ */
 void print_most_numbers(void)
 {
 	int i;
