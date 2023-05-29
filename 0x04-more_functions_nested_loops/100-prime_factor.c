@@ -8,8 +8,8 @@
 int main(void)
 {
 	int i;
-	long unsigned int prime_number = 612852475143;
-	long unsigned int max_prime = -1;
+	long int prime_number = 612852475143;
+	long int max_prime = -1;
 
 	while (prime_number % 2 == 0)
 	{
