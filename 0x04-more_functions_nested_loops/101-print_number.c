@@ -1,5 +1,9 @@
 #include "main.h"
 
+/**
+ * print_number - print the number
+ * @n: input n
+ */
 void print_number(int n)
 {
 	if (n > 999)
