@@ -1,5 +1,5 @@
 #include "main.h"
-
+#include <stdio.h>
 /**
  * _strcpy - copies the string pointed to by src
  * @dest: string destination
@@ -8,9 +8,12 @@
  */
 char *_strcpy(char *dest, char *src)
 {
-	int i;
+	int i, len;
 
-	for (i = 0; src[i]; i++)
+	len = 0;
+	while (src[len])
+		len++;
+	for (i = 0; i <= len; i++)
 	{
 		dest[i] = src[i];
 	}
