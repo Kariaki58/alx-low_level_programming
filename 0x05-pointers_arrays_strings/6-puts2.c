@@ -1,5 +1,10 @@
 #include "main.h"
 
+/**
+ * _strlen - strlen of s
+ * @s: input s
+ * Return: return len.
+ */
 int _strlen(char *s)
 {
 	int len = 0;
