@@ -9,7 +9,7 @@
  */
 int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 {
-	dlisttint_t *prev, *temp;
+	dlistint_t *prev, *temp;
 	unsigned int i = 0;
 
 	temp = *head;
