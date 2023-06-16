@@ -6,36 +6,22 @@
  */
 void print_number(int n)
 {
-	if (n > 999)
+	unsigned int a, b, c;
+
+	if (n < 0)
 	{
-		putchar((n / 1000) + '0');
-		putchar(((n / 100) % 10) + '0');
-		putchar(((n / 10) % 10) + '0');
-		putchar((n % 10) + '0');
-	}
-	else if (n < 0)
-	{
-		putchar('-');
-		n = abs(n);
-		if (n > 9)
-		{
-			putchar((n / 10) + '0');
-		}
-		putchar((n % 10) + '0');
-	}
-	else if (n > 99)
-	{
-		putchar((n / 100) + '0');
-		putchar(((n / 10) % 10) + '0');
-		putchar((n % 10) + '0');
-	}
-	else if (n > 9)
-	{
-		putchar((n / 10) + '0');
-		putchar((n % 10) + '0');
+		_putchar('-');
+		a = -n;
 	}
 	else
+		a = n;
+	b = a;
+	c = 1;
+	while (b > 9)
 	{
-		putchar(n + '0');
+		b /= 10;
+		c *= 10;
 	}
+	for (; c >= 1; c /= 10)
+		_putchar(((a / c) % 10) + 48);
 }
