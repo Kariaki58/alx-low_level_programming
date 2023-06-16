@@ -14,7 +14,7 @@ int main(void)
 		c = a + b;
 		a = b;
 		b = c;
-		printf("%ld", c);
+		printf("%lu", c);
 		if (i < 96)
 		{
 			putchar(',');
