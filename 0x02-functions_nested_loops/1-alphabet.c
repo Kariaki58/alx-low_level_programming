@@ -1,9 +1,9 @@
-#include <stdio.h>
+#include "main.h"
 /**
  * main - hello world
  * Return: 0
 */
-int main(void)
+void print_alphabet(void)
 {
 	char i;
 
