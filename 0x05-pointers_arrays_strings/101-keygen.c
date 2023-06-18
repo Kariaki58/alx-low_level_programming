@@ -17,7 +17,7 @@ int main(void)
 		password_init -= get_random_number;
 		i++;
 	}
-	if (password_init > 0)
+	if (get_random_number > 0)
 		password[i] = get_random_number;
 	else
 		i--;
