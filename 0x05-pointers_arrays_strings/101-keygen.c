@@ -3,6 +3,10 @@
 #include <time.h>
 #include <math.h>
 
+/**
+ * main - entry point
+ * Return: return 0
+ */
 int main(void)
 {
 	int get_random_number, password_init = 2772;
@@ -26,4 +30,5 @@ int main(void)
 	{
 		printf("%c", password[j]);
 	}
+	return (0);
 }
