@@ -1,20 +1,19 @@
 #include "main.h"
 #include <string.h>
 #include <stdio.h>
+
 /**
  * cap_string - capitalize any string you see in str
- * @str: string to be capitalize
+ * @str: string to be capitalized
  * Return: return capitalized str
- */
+*/
 char *cap_string(char str[])
 {
 	char *d = ",;.!?(){}";
-	unsigned int i = 1, j, data;
+	unsigned int i = 1, j;
 
 	if (str[0] >= 'a' && str[0] <= 'z')
-	{
 		str[0] = str[0] - 32;
-	}
 	while (str[i])
 	{
 		for (j = 0; j < strlen(d) - 1; j++)
@@ -28,6 +27,7 @@ char *cap_string(char str[])
 					data = str[i];
 					data -= 32;
 					str[i] = data;
+					str[i] = str[i] - 32;
 				}
 			}
 		}
