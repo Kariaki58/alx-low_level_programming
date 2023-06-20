@@ -1,31 +1,33 @@
 #include "main.h"
 #include <string.h>
+#include <stdio.h>
 
 /**
- * cap_string - capitalize string
- * @str: strings
- * Return: return str.
+ * cap_string - capitalize any string you see in str
+ * @str: string to be capitalized
+ * Return: return capitalized str
 */
-char *cap_string(char *str)
+char *cap_string(char str[])
 {
-	char *Sep = ",;.!?(){}";
-	size_t i = 0, j, str_num;
+	char *d = ",;.!?(){}";
+	unsigned int i = 1, j;
 
+	if (str[0] >= 'a' && str[0] <= 'z')
+		str[0] = str[0] - 32;
 	while (str[i])
 	{
-		for (j = 0; j < strlen(Sep); j++)
+		for (j = 0; j < strlen(d) - 1; j++)
 		{
-			if (str[i - 1] == Sep[j])
+			if (str[i - 1] == d[j] || str[i - 1] == ' ' || 
+			str[i - 1] == '\t' || str[i - 1] == '"' || 
+			str[i - 1] == '\n')
 			{
-				str_num = str[i];
-				if (str_num >= 97 && str_num <= 122)
+				if (str[i] >= 'a' && str[i] <= 'z')
 				{
-					str_num -= 32;
-					str[i] = str_num;
+					str[i] = str[i] - 32;
 				}
 			}
 		}
-		if (str[i - 1] == " ")
 		i++;
 	}
 	return (str);
