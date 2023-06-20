@@ -24,9 +24,6 @@ char *cap_string(char str[])
 			{
 				if (str[i] >= 'a' && str[i] <= 'z')
 				{
-					data = str[i];
-					data -= 32;
-					str[i] = data;
 					str[i] = str[i] - 32;
 				}
 			}
