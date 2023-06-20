@@ -10,7 +10,7 @@ char *rot13(char *str)
 {
 	char *rot0 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	char *rot13 = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
-	unsigned i = 0, j;
+	unsigned int i = 0, j;
 
 	while (str[i])
 	{
