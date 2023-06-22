@@ -2,6 +2,14 @@
 #include <string.h>
 #include "main.h"
 
+/**
+ * infinite_add - add infinite
+ * @n1: n1
+ * @n2: n2
+ * @r: r
+ * @size_r: size_r
+ * Return: return r.
+ */
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
 	int len1 = strlen(n1);
@@ -12,7 +20,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	int i, j;
 
 	if (max_len + 1 > size_r)
-		return 0;
+		return (0);
 	r[max_len + 1] = '\0';
 	for (i = len1 - 1, j = len2 - 1; i >= 0 || j >= 0; i--, j--)
 	{
@@ -32,6 +40,6 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		r[max_len] = carry + '0';
 	}
 	else if (max_len == 0)
-		return r + 1;
-	return r;
+		return (r + 1);
+	return (r);
 }
