@@ -42,5 +42,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 			return (0);
 		r[max_len] = carry + '0';
 	}
+	else if (max_len == 0)
+		return (r + 1);
 	return (r);
 }
