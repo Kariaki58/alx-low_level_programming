@@ -7,29 +7,19 @@
  */
 void print_number(int n)
 {
-	unsigned int store;
-	unsigned int stack[32];
-	int top = -1;
+	unsigned int n1;
 
-	store = n;
-	if (n == 0)
-	{
-		_putchar(n + '0');
-		return;
-	}
 	if (n < 0)
 	{
-		store = -store;
+		n1 = -n;
 		_putchar('-');
-	}
-	while (store)
+	} else
 	{
-		stack[++top] = store % 10;
-		store /= 10;
+		n1 = n;
 	}
-	while (top >= 0)
-	{
-		_putchar(stack[top] + '0');
-		top--;
-	}
+
+	if (n1 / 10)
+		print_number(n1 / 10);
+
+	_putchar((n1 % 10) + '0');
 }
