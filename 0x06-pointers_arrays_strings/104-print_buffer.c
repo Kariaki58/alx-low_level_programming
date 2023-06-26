@@ -1,6 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/**
+ * print_buffer - print the buffer in a string
+ * @b: string input
+ * @size: input size 126.
+ */
 void print_buffer(char *b, int size)
 {
 	int i, j;
