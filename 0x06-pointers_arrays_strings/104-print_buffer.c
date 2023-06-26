@@ -16,11 +16,11 @@ void print_buffer(char *b, int size)
 		for (i = 0; i < 10; i++)
 		{
 			if ((i + j) >= size)
-				putchar(' ');
+				printf(" ");
 			else
 				printf("%02x", *(b + i + j));
 			if ((i % 2) != 0 && i != 0)
-				putchar(' ');
+				printf(" ");
 		}
 		for (i = 0; i < 10; i++)
 		{
@@ -29,12 +29,12 @@ void print_buffer(char *b, int size)
 			else if (*(b + i + j) >= 31 && *(b + i + j) <= 126)
 				printf("%c", *(b + i + j));
 			else
-				putchar('.');
+				printf(".");
 		}
-		if (i >= size)
+		if (j >= size)
 			continue;
-		putchar('\n');
+		printf("\n");
 	}
 	if (size <= 0)
-		putchar('\n');
+		printf("\n");
 }
