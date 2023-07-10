@@ -3,7 +3,6 @@
  * key_index - get the key index using the hash function
  * @key: key entry.
  * @size: size.
- * 
  * Return: the index
 */
 
