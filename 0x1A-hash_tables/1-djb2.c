@@ -3,7 +3,7 @@
 
 /**
  * hash_djb2 - hash function using djb2 algorithm.
- * @str: get the string.
+ * @str: get the string text.
  * Return: an index in the hash_table.
 */
 unsigned long int hash_djb2(const unsigned char *str)
