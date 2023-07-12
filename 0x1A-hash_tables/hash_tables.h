@@ -1,6 +1,5 @@
 #ifndef HEADER_H
 #define HEADER_H
-
 /**
  * struct hash_node_s - Node of a hash table
  *
@@ -11,9 +10,9 @@
  */
 typedef struct hash_node_s
 {
-     char *key;
-     char *value;
-     struct hash_node_s *next;
+	char *key;
+	char *value;
+	struct hash_node_s *next;
 } hash_node_t;
 
 /**
