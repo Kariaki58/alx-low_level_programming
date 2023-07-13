@@ -32,11 +32,11 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	hash_node_t *newNode;
 	hash_node_t *current;
 	
+	if (ht == NULL || *key == '\n' || *value == '\n')
+		return (0);
 	newNode = create_node(key, value);
 	index = key_index((unsigned char *)key, ht->size);
 	if (newNode == NULL)
-		return (0);
-	if (ht == NULL || *key == '\n' || *value == '\n')
 		return (0);
 	if (ht->array[index] == NULL)
 	{
