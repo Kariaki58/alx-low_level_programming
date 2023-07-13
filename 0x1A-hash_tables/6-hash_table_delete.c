@@ -15,10 +15,10 @@ void hash_table_delete(hash_table_t *ht)
 	if (!ht)
 		return;
 	index = 0;
-	move = ht->array[index];
-	curr = move;
 	while (index  < ht->size)
 	{
+		move = ht->array[index];
+		curr = move;
 		while (curr != NULL)
 		{
 			next = curr->next;
