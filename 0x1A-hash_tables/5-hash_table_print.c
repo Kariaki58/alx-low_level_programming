@@ -11,12 +11,14 @@ void hash_table_print(const hash_table_t *ht)
 {
 	hash_node_t *move;
 	unsigned long int index;
-	unsigned long int mark = 0;
+	unsigned long int mark;
 
 	if (ht == NULL)
 		return;
 	printf("{");
-	for (index = 0; index < ht->size; index++)
+	index = 0;
+	mark = 0;
+	while (index < ht->size)
 	{
 		move = ht->array[index];
 		while (move != NULL)
@@ -31,6 +33,7 @@ void hash_table_print(const hash_table_t *ht)
 				mark = 1;
 			move = move->next;
 		}
+		index++;
 	}
 	printf("}\n");
 }
