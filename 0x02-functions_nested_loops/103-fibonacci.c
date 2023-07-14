@@ -15,7 +15,7 @@ int main(void)
 			break;
 		first = second;
 		second = add;
-		(!(second % 2)) ? sum += second: sum;
+		(!(second % 2)) ? sum += second : sum;
 	}
 	printf("%ld\n", sum);
 	return (0);
