@@ -1,25 +1,21 @@
 #include <stdio.h>
 
 /**
- * main - Entry point
+ * main - entry point
  * Return: return 0.
  */
 int main(void)
 {
-	unsigned long int i, a = 1, b = 2, c, sum = 2;
+	unsigned long int first = 1, second = 2, add = 0, sum = 2;
 
-	for (i = 0; i < 31; i++)
+	while (1)
 	{
-		c = a + b;
-		a = b;
-		b = c;
-		if (c <= 4000000)
-		{
-			if (c % 2 == 0)
-			{
-				sum += c;
-			}
-		}
+		add = first + second;
+		if (add > 4000000)
+			break;
+		first = second;
+		second = add;
+		(!(second % 2)) ? sum += second: sum;
 	}
 	printf("%ld\n", sum);
 	return (0);
