@@ -1,48 +1,41 @@
-#include "main.h"
-#include <stdlib.h>
 #include <stdio.h>
 
 /**
- * print_times_table - print times table
- * @n: int n
+ * print_times_table - print n times table
+ * @n: number
  */
 void print_times_table(int n)
 {
-	int i, j, multiplier = 0;
+	int i, j, mul = 0;
 
 	if (n > 15 || n < 0)
 		return;
-	for (i = 0; i <= n; i++)
+	for (i = 0; i < n + 1; i++)
 	{
-		for (j = 0; j <= n; j++)
+		for (j = 0; j < n + 1; j++)
 		{
-			multiplier = i * j;
-			if (j == 0)
-				putchar(multiplier + '0');
-			if (multiplier < 10 && j != 0)
+			mul = i * j;
+			if (mul < 10 && j)
 			{
-				putchar(',');
 				putchar(' ');
 				putchar(' ');
 				putchar(' ');
-				putchar(multiplier + '0');
 			}
-			if (multiplier > 9 && multiplier < 100)
+			else if (mul > 9 && mul < 100)
 			{
-				putchar(',');
 				putchar(' ');
 				putchar(' ');
-				putchar((multiplier / 10) + '0');
-				putchar((multiplier % 10) + '0');
+				putchar((mul / 10) + '0');
 			}
-			if (multiplier > 99)
+			else if (mul > 99)
 			{
-				putchar(',');
 				putchar(' ');
-				putchar((multiplier / 100) + '0');
-				putchar(((multiplier / 10) % 10) + '0');
-				putchar((multiplier % 10) + '0');
+				putchar((mul / 100) + '0');
+				putchar(((mul / 10) % 10) + '0');
 			}
+			putchar((mul % 10) + '0');
+			if (j < n)
+				putchar(',');
 		}
 		putchar('\n');
 	}
