@@ -7,12 +7,12 @@
 /**
  * make_buffer - function to create a buffer
  * @file: file input to write to
- * Return: return buffer on success
+ * Return: return buffer on su ccess
  */
 char *make_buffer(char *file)
 {
 	char *buffer;
-
+	
 	buffer = malloc(sizeof(char) * 1024);
 	if (buffer == NULL)
 	{
@@ -20,6 +20,7 @@ char *make_buffer(char *file)
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file);
 		exit(99);
 	}
+	printf("Hello world");
 	return (buffer);
 }
 
