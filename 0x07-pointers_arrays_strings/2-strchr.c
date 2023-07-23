@@ -10,10 +10,9 @@
 char *_strchr(char *s, char c)
 {
 	unsigned int i;
-	/*
-	int find_status = 0;
-	char newchr[100];
-	*/
+
+	if (c == '\0')
+		return (s);
 	for (i = 0; i < strlen(s); i++)
 	{
 		if (s[i] == c)
