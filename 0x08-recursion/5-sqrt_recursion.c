@@ -5,7 +5,6 @@
  * check_square - check if x can give me a square
  * @n: number
  * @x: x
- * @y: y
  * Return: return check for square
  */
 int check_square(int n, int x)
