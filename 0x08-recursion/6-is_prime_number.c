@@ -12,11 +12,11 @@ int _sqrt(int n, int x)
 		return (x);
 	if (x > n / 2)
 		return (x);
-	return _sqrt(n, x + 1);
+	return (_sqrt(n, x + 1));
 }
 
 /**
- * generatre_number - generates a number b/w 2 - sqrt(n)
+ * generate_number - generates a number b/w 2 - sqrt(n)
  * @n: n
  * @x: x
  * Return: 1 | 0
@@ -33,7 +33,7 @@ int generate_number(int n, int x)
 	{
 		return (0);
 	}
-	return generate_number(n, x + 1);
+	return (generate_number(n, x + 1));
 }
 
 /**
@@ -48,5 +48,5 @@ int is_prime_number(int n)
 	if (n < 2)
 		return (0);
 	check = generate_number(n, 2);
-	return check;
+	return (check);
 }
