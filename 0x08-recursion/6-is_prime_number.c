@@ -24,7 +24,7 @@ int _sqrt(int n, int x)
 int generate_number(int n, int x)
 {
 	int sq_root = _sqrt(n, x);
-	
+
 	if (x == sq_root && n % x != 0)
 	{
 		return (1);
