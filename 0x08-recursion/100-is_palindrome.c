@@ -34,7 +34,7 @@ int indices(char *s, int x, int y)
 		return (0);
 	if (x >= y)
 		return (1);
-	return indices(s, x + 1, y - 1);
+	return (indices(s, x + 1, y - 1));
 }
 
 /**
@@ -53,5 +53,5 @@ int is_palindrome(char *s)
 	if (end < 2)
 		return (1);
 	start = 0;
-	return indices(s, start, end - 1);
+	return (indices(s, start, end - 1));
 }
