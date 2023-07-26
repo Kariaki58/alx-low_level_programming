@@ -8,13 +8,13 @@
  * @y: y
  * Return: return check for square
  */
-int check_square(int n, int x, int y)
+int check_square(int n, int x)
 {
 	if ((x * x) == n)
 		return (x);
 	if (x >= n / 2 || x < 0)
 		return (-1);
-	return (check_square(n, x + 1, y));
+	return (check_square(n, x + 1));
 }
 
 /**
@@ -26,6 +26,6 @@ int _sqrt_recursion(int n)
 {
 	int x;
 
-	x = check_square(n, 1, 2);
+	x = check_square(n, 1);
 	return (x);
 }
