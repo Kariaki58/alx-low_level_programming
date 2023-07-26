@@ -1,5 +1,11 @@
 #include "main.h"
 
+/**
+ * _pow_recursion - power recursion
+ * @x: base
+ * @y: power
+ * Return: return x ^ y
+ */
 int _pow_recursion(int x, int y)
 {
 	if (y < 0)
