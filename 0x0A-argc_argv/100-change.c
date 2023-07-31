@@ -12,13 +12,13 @@ int main(int ac, char **av)
 {
 	int cents, coins = 0;
 
-	if (argc != 2)
+	if (ac != 2)
 	{
 		printf("Error\n");
 		return (1);
 	}
 
-	cents = atoi(argv[1]);
+	cents = atoi(av[1]);
 
 	while (cents > 0)
 	{
