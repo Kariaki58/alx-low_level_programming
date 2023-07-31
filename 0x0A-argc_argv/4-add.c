@@ -10,25 +10,24 @@
  */
 int main(int ac, char **av)
 {
-	int i, sum = 0, status = 1;
+	int i, j, sum = 0, status = 1;
 
-	if (ac == 1)
-	{
-		printf("%d\n", 0);
-		return (0);
-	}
 	for (i = 1; i < ac; i++)
 	{
-		if (*(av[i]) < 58 && *(av[i]) > 48)
-			sum += atoi(av[i]);
-		else
-			status = 0;
+		for (j = 0; av[i][j]; j++)
+		{
+			if (av[i][j] < '0' || av[i][j] > '9')
+			{
+				status = 0;
+			}
+		}
+		sum += atoi(av[i]);
 	}
-	if (sum && status)
+	if (!status)
 	{
-		printf("%d\n", sum);
-		return (0);
+		printf("Error\n");
+		return (1);
 	}
-	printf("Error\n");
+	printf("%d\n", sum);
 	return (0);
 }
