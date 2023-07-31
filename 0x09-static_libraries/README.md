@@ -1,2 +1,1 @@
-0x09. C - Learning Static libraries
-https://docencia.ac.upc.edu/FIB/USO/Bibliografia/unix-c-libraries.html
+0x09. C - Static libraries
