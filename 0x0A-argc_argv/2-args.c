@@ -6,7 +6,7 @@
  * @av: argument vector
  * Return: return 0 on success
  */
-int main(int ac, char **a)
+int main(int ac, char **av)
 {
 	int i;
 
