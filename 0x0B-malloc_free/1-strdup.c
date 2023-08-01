@@ -9,5 +9,7 @@
  */
 char *_strdup(char *str)
 {
+	if (!str)
+		return (NULL);
 	return (strdup(str));
 }
