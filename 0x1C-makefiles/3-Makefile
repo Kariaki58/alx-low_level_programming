@@ -15,7 +15,9 @@ $(NAME): $(OBJ)
 	$(CC) -c $< -o $@
 
 clean:
-	$(RM) $(OBJ) *~ \#*\# $(NAME)
+	$(RM) $(OBJ)
+	$(RM) *~
+	$(RM) \#*\# $(NAME)
 
 oclean:
 	$(RM) $(OBJ)
