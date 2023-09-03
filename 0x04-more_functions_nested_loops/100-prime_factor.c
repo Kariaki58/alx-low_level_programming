@@ -2,30 +2,47 @@
 #include <math.h>
 
 /**
+ * check_prime - check if prime
+ * @n: n
+ * Return: 0 | 1
+ */
+int check_prime(int n)
+{
+	int check, status;
+
+	check = 2;
+	status = 1;
+	while (!(n % check) && status)
+	{
+		status = 0;
+		check++;
+	}
+	if (check == 2 || n == 2)
+		return (1);
+	return (0);
+}
+
+/**
  * main - entry point
  * Return: always 0.
  */
 int main(void)
 {
-	int i;
-	long int prime_number = 612852475143;
-	long int max_prime = -1;
+	long int i, n;
 
-	while (prime_number % 2 == 0)
+	n = 1231952;
+	for (i = 2; i <= n && n > 0;)
 	{
-		max_prime = 2;
-		prime_number /= 2;
-	}
-	for (i = 3; i <= sqrt(prime_number); i += 2)
-	{
-		while (prime_number % i == 0)
+		if (check_prime(i))
 		{
-			max_prime = i;
-			prime_number /= i;
+			if (!(n % i))
+				n /= i;
+			else
+				i++;
 		}
+		else
+			i++;
 	}
-	if (prime_number > 2)
-		max_prime = prime_number;
-	printf("%ld\n", max_prime);
+	printf("%ld\n", i);
 	return (0);
 }
