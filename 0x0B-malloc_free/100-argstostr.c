@@ -13,13 +13,10 @@ char *argstostr(int ac, char **av)
 {
 	char *string;
 	int i, j;
-	size_t length;
 
 	if (!ac || !av)
 		return (NULL);
-	for (i = length = 0; i < ac; i++)
-		length += strlen(av[i]);
-	string = malloc((length + 1) * sizeof(char));
+	string = malloc(sizeof(*av) * ac);
 	if (string == NULL)
 		return (NULL);
 	for (i = j = 0; i < ac; i++)
