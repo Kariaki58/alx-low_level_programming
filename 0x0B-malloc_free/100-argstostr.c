@@ -1,6 +1,8 @@
 #include "main.h"
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
+
 /**
  * argstostr - its the pebble in your shoe
  * @ac: ac
@@ -11,10 +13,13 @@ char *argstostr(int ac, char **av)
 {
 	char *string;
 	int i, j;
+	size_t length;
 
 	if (!ac || !av)
 		return (NULL);
-	string = malloc(sizeof(*av) * ac);
+	for (i = length = 0; i < ac; i++)
+		length += strlen(av[i]);
+	string = malloc(length + 1);
 	if (string == NULL)
 		return (NULL);
 	for (i = j = 0; i < ac; i++)
