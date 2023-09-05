@@ -3,10 +3,11 @@
 #include <stdio.h>
 
 /**
- * realloc - realloc
+ * _realloc - realloc
  * @ptr: ptr
  * @old_size: old size
  * @new_size: new size
+ * Return: return reallocation
  */
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
