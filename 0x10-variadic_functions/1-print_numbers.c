@@ -2,7 +2,7 @@
 
 /**
  * print_numbers - print numbers
- * @seperator: separator
+ * @separator: separator
  * @n: n
  */
 void print_numbers(const char *separator, const unsigned int n, ...)
@@ -10,7 +10,7 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	va_list list;
 	unsigned int i;
 
-	if (separator == NULL)
+	if (separator == NULL || separator == "")
 		return;
 	va_start(list, n);
 	for (i = 0; i < n; i++)
