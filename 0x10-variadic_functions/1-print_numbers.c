@@ -11,7 +11,7 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	va_list list;
 	unsigned int i;
 
-	if (separator == NULL || !strcmp(separator, ""))
+	if (separator == NULL)
 		return;
 	va_start(list, n);
 	for (i = 0; i < n; i++)
@@ -20,5 +20,6 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 		if (i < n - 1)
 			printf("%s", separator);
 	}
+	va_end(list);
 	putchar('\n');
 }
