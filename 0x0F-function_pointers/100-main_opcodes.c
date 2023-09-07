@@ -3,7 +3,7 @@
 
 /**
  * print_opcodes - print opcodes
- * @a: a
+ * @array: array
  * @n: n
  */
 void print_opcodes(char *array, int n)
@@ -22,10 +22,10 @@ void print_opcodes(char *array, int n)
 /**
  * main - entry point
  * @ac: ac
- * @n: n
+ * @av: av
  * Return: 0 on success
  */
-int main (int ac, char **av)
+int main(int ac, char **av)
 {
 	int i;
 
