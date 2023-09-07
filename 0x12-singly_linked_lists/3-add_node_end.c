@@ -2,7 +2,8 @@
 #include <string.h>
 
 /**
- * head - head node
+ * add_node_end - add a node at the end of a list
+ * @head: head node
  * @str: str
  * Return: return head;
  */
