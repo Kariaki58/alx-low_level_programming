@@ -4,7 +4,7 @@
 /**
  * print_listint - print list
  * @h: h
- * Return: length of list
+ * Return: length of list index
 */
 size_t print_listint(const listint_t *h)
 {
