@@ -35,14 +35,14 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	listint_t *curr, *prev, *newnode;
 
 	length = listint_lenx(*head);
-	if (*head == NULL || head == NULL || idx > length)
+	if (idx > length)
 		return (NULL);
 	curr = *head;
 	newnode = malloc(sizeof(listint_t));
 	if (newnode == NULL)
 		return (NULL);
 	newnode->n = n;
-	if (idx == 0)
+	if (idx == 0 || *head == NULL || head == NULL)
 	{
 		newnode->next = *head;
 		*head = newnode;
