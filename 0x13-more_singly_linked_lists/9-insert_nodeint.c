@@ -3,6 +3,26 @@
 #include <stdio.h>
 
 /**
+ * listint_lenx - find length of a list
+ * @h: h
+ * Return: length of list
+ */
+size_t listint_lenx(const listint_t *h)
+{
+	int len;
+	const listint_t *current;
+
+	current = h;
+	len = 0;
+	while (current != NULL)
+	{
+		len++;
+		current = current->next;
+	}
+	return (len);
+}
+
+/**
  * insert_nodeint_at_index - insert a node at index
  * @head: head
  * @idx: index
@@ -11,10 +31,11 @@
  */
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
-	unsigned int i;
+	unsigned int i, length;
 	listint_t *curr, *prev, *newnode;
 
-	if (*head == NULL || head == NULL)
+	length = listint_lenx(*head);
+	if (*head == NULL || head == NULL || idx > length)
 		return (NULL);
 	curr = *head;
 	newnode = malloc(sizeof(listint_t));
