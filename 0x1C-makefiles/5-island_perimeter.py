@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """module documentation"""
 
+
 def descover_island(grid):
     """descover island"""
     if any(grid[0][:]):
