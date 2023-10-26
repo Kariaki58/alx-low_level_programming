@@ -1,6 +1,21 @@
 #!/usr/bin/python3
 """function that finds a island"""
 
+def descover_island(grid):
+    """descover island"""
+    status = True
+    if not any(grid[0][:]):
+        status = False
+    if not any(grid[:][0]):
+        status = False
+    if not any(grid[len(grid) - 1][:]):
+        status = False
+    if not any(grid[:][len(grid) - 1]):
+        status = False
+    if status:
+        return False
+    else:
+        return True
 
 def island_perimeter(grid):
     """find island in a river"""
@@ -10,6 +25,8 @@ def island_perimeter(grid):
     cols = 0
     adder = 0
     grid_check = True
+    if not descover_island(grid):
+        return
     for i in range(len_rows):
         for j in range(len_cols):
             if grid[i][j] == 1 and grid_check:
