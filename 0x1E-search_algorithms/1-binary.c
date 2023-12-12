@@ -29,7 +29,7 @@ void print_output(int *array, int l, int r)
  * @array: array
  * @size: size
  * @value: value
- * Return - return idx or -1
+ * Return: return idx or -1
 */
 int binary_search(int *array, size_t size, int value)
 {
