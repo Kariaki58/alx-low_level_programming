@@ -8,35 +8,33 @@
  * @array: array
  * @size: size
  * @value: value
- * Return - return integers
+ * Return: return integers
 */
 int jump_search(int *array, size_t size, int value)
 {
-	int a, b;
+	int i, b, a, prev;
 
-	if (!array)
+	if (array == NULL || size == 0)
 		return (-1);
-	a = 0;
-	b = (int)sqrt((int) size);
-	printf("Value checked array[%d] = [%d]\n", a, a);
-	
-	while (array[(int)fmin(b, (int)size) - 1] < value)
+
+	b = (int)sqrt((int)size);
+	prev = i = a = 0;
+
+	do {
+		printf("Value checked array[%d] = [%d]\n", i, array[i]);
+		if (array[i] == value)
+			return (i);
+		prev = i;
+		a += 1;
+		i = a * b;
+	} while (i < (int)size && array[i] < value);
+	printf("Value found between indexes [%d] and [%d]\n", prev, i);
+	while (prev <= i && prev < (int)size)
 	{
-		a = b;
-		b = b + (int)sqrt((int) size);
-		if (a >= (int)size)
-			return (-1);
-		printf("Value checked array[%d] = [%d]\n", a, a);
+		printf("Value checked array[%d] = [%d]\n", prev, array[prev]);
+		if (array[prev] == value)
+			return (prev);
+		prev += 1;
 	}
-	printf("Value found between indexes [%d] and [%d]\n", a, a);
-	while (array[a] < value)
-	{
-		a = a + 1;
-		if (a == fmin(b, (int)size))
-			return (-1);
-	}
-	if (array[a] == value)
-		return (a);
-	else
-		return (-1);
+	return (-1);
 }
