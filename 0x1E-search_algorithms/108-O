@@ -1,2 +1,2 @@
-O(sqrt(n))
+O(sqrt(n^2))
     
