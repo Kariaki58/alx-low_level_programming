@@ -4,6 +4,7 @@
 
 /**
  * print_output - print the program search output
+ * @array: array
  * @r: r
  * @l: l
 */
@@ -57,5 +58,4 @@ int binary_search(int *array, size_t size, int value)
 		}
 	}
 	return (-1);
-	
 }
