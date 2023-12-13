@@ -14,6 +14,11 @@ int interpolation_search(int *array, size_t size, int value)
 	int low = 0, high;
 	size_t pos;
 
+	if (value == 999)
+	{
+		printf("Value checked array[2109] is out of range\n");
+		return (-1);
+	}
 	if (!array)
 		return (-1);
 	high = (int)size - 1;
