@@ -1,73 +1,62 @@
+#include "search_algos.h"
 #include <stdlib.h>
 #include <stdio.h>
-#include "search_algos.h"
 
 /**
- * search_bin - search an array
+ * _binary_search - search a binary tree
  * @array: array
- * @low: low
- * @high: high
+ * @start: start pos
+ * @end: end pos
  * @value: value
- * Return: idx or -1
+ * Return: 1 || -1
 */
-int search_bin(int *array, unsigned low, unsigned high, int value)
+int _binary_search(int *array, size_t start, size_t end, int value)
 {
-	unsigned mid, i;
+	unsigned i;
 
-	while (low <= high)
+	while (end >= start)
 	{
-		mid = (low + high) / 2;
 		printf("Searching in array: ");
-		for (i = low; i <= high; ++i)
-		{
-			printf("%d", array[i]);
-			if (i < high)
-			{
-				putchar(',');
-				putchar(' ');
-			}
-			else
-				putchar('\n');
-		}
-		if (array[mid] == value)
-			return mid;
-		if (array[mid] < value)
-			low = mid + 1;
+		for (i = start; i < end; i++)
+			printf("%d, ", array[i]);
+		printf("%d\n", array[i]);
+		i = start + (end - start) / 2;
+		if (array[i] == value)
+			return (i);
+		if (array[i] < value)
+			start = i + 1;
 		else
-			high = mid - 1;
+			end = i - 1;
 	}
 	return (-1);
 }
 
 /**
- * exponentail_search - Searches for a value in a sorted array
- * @array: array
+ * exponential_search - searches for a value in sorted array
  * @size: size
  * @value: value
- * Return: idx || -1
+ * Return: idx or size.
 */
-int exponential_search(int *array, unsigned size, int value)
+int exponential_search(int *array, size_t size, int value)
 {
-	unsigned i;
-    unsigned low, high;
+	unsigned bound, end;
 
-    if (!array)
-        return (-1);
-    if (size == 0)
-        return (-1);
-    if (array[0] == value)
-    {
-        printf("Value checked array[0] = [%d]\n", array[0]);
-        return (0);
-    }
-    i = 1;
-    while (i < size && array[i] <= value)
-    {
-        printf("Value checked array[%d] = [%d]\n", i, array[i]);
-        i *= 2;
-    }
-    low = i / 2;
-    high = (1 < size) ? i : size - 1;
-	printf("Value found between indexes [%d] and [%d]\n", low, high);
-	return search_bin(array, low, high, value);
+	if (!array)
+		return (-1);
+	bound = 0;
+	if (array[bound] != value)
+	{
+		bound = 1;
+		while (bound < size && array[bound] <= value)
+		{
+			printf("Value checked array[%d] = [%d]\n", bound, array[bound]);
+			bound *= 2;
+		}
+	}
+	if (bound < size)
+		end = bound;
+	else
+		end = size - 1;
+	printf("Value found between indexes[%d] and [%d]\n", bound / 2, end);
+	return (_binary_search(array, bound / 2, end, value));
 }
