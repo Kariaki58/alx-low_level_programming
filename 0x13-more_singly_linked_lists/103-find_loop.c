@@ -26,6 +26,8 @@ listint_t *find_listint_loop(listint_t *head)
 		}
 		curr = curr->next;
 	}
+	if (!curr)
+		return (NULL);
 	return (loop_loc);
 	/*listint_t *slow = head;
 	listint_t *fast = head;
