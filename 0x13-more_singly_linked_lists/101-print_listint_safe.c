@@ -19,7 +19,7 @@ size_t print_listint_safe(const listint_t *head)
 		printf("[%p] %d\n", (void *)curr, curr->n);
 		if (curr <= curr->next)
 		{
-			printf("-> [%p] %d\n", (void *)curr, curr->next->n);
+			printf("-> [%p] %d\n", (void *)curr->next, curr->next->n);
 			exit(98);
 		}
 		curr = curr->next;
